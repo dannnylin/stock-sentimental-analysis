@@ -66,5 +66,9 @@ if __name__ == "__main__":
         polarity = sentimentAnalysis(sys.argv[1])
         if polarity > .50:
             print "People are generally positive about $" + sys.argv[1] + " with a polarity of " + str(polarity)
+        elif polarity < .50:
+            print "People feel generally negative towards $" + sys.argv[1] + " with a polarity of " + str(polarity)
+        else:
+            print "People are neutral about $" + sys.argv[1] + " with a polarity of " + str(polarity)
     except IndexError:
-        print "Error: Missing parameters. \nExample parameters: $SHOP 1000"
+        print "Error: Missing parameters. \nParameters: SYMBOL NUMBER_OF_TWEETS"
